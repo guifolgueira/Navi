@@ -1,0 +1,61 @@
+#Código do primeiro teste -------------------------------------------
+
+a = 1
+for i in range(1, 5000001):
+    if i % 2 == 0 and i % 37 == 0 and i % 49 == 0:
+        a = a+1
+print("-Teste 1-")
+print(a, "números satisfazem a condição")
+
+# Código do segundo teste --------------------------------------------
+
+import numpy as np
+import math 
+
+x = list()
+y = 0
+while y in range(0,10):
+    if (y % 2 == 0):
+        x.append((3**y)+(7*math.factorial(y)))
+        y = y+1
+    else:
+        x.append((2**y)+(4*math.log(y)))
+        y = y+1
+        
+print("-Teste 2-")
+maxvalue = max(x)
+maxpos = x.index(maxvalue)
+print("Posição de maior valor = " ,maxpos)
+
+sum = sum(x) 
+len = len(x)
+print("Média da lista = ",round(sum/len, 2))
+
+# Código do terceiro teste -------------------------------------------
+
+print ("-Teste 3-")
+print ("Favor inserir o nome dos alunos e as respectivas notas")
+a1 = input("Nome do aluno 1: ")
+n1 = input("Nota do aluno 1: ")
+a2 = input("Nome do aluno 2: ")
+n2 = input("Nota do aluno 2: ")
+a3 = input("Nome do aluno 3: ")
+n3 = input("Nota do aluno 3: ")
+a4 = input("Nome do aluno 4: ")
+n4 = input("Nota do aluno 4: ")
+a5 = input("Nome do aluno 5: ")
+n5 = input("Nota do aluno 5: ")
+
+alunos = [a1,a2,a3,a4,a5]
+notas = [n1,n2,n3,n4,n5]
+
+dict = {}
+j=0
+while j < 5:
+    dict[alunos[j]] = notas[j]
+    j = j+1
+    
+max_value = max(dict.values())  # maximum value
+max_keys = [k for k, v in dict.items() if v == max_value]
+
+print("A maior nota é",max_value,",obtida pelo(s) aluno(s)", max_keys)
